@@ -7,8 +7,8 @@ export default function Videogame({img, name, genres}){
 			<h3>{name}</h3>
 			<h5>Genres</h5>
 			{genres.map(el => 
-				<ul type="none">
-					<li>{el.name}</li>
+				<ul key={el.id} type="none">
+					<li key={el.id}>{el.name}</li>
 				</ul>
 			)}
 		</div>

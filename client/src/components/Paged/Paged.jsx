@@ -12,7 +12,7 @@ export default function Paged({ videogamesPerPage, allVideogames, paginado }){
       <div>
         <ul>
           {pageNumbers?.map(el =>
-            <a onClick={() => paginado(el)}>{el}</a>
+            <a key={el} onClick={() => paginado(el)}>{el}</a>
           )}
         </ul>
       </div>

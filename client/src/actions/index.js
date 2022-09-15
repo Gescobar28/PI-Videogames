@@ -1,6 +1,8 @@
 import axios from 'axios'
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 export const GET_GENRES = 'GET_GENRES';
+export const FILTER_BY = 'FILTER_BY';
+
 
 export function getVideogames(){
   return async function(dispatch){
@@ -20,5 +22,12 @@ export function getGenres(){
       type: GET_GENRES,
       payload: json.data
     })
+  }
+}
+
+export function filterByGenre(payload){
+  return{   
+    type: FILTER_BY,
+    payload
   }
 }

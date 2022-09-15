@@ -1,13 +1,13 @@
-import { GET_VIDEOGAMES, GET_GENRES } from '../actions'
+import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY } from '../actions'
 
-const intitalState = {
+const initialState = {
 	videogames: [],
 	allVideogames: [],
 	genres: []
 }
 
 
-function rootReducer(state = intitalState, action){
+const rootReducer = (state = initialState, action) => {
   switch(action.type){
 		case GET_VIDEOGAMES: 
 			return{
@@ -20,15 +20,35 @@ function rootReducer(state = intitalState, action){
 				...state,
 				genres: action.payload
 			}
-		
-		
-	
+		case FILTER_BY:
+			const allVideogames = state.allVideogames;
+			if(action.payload === 'all'){
+				return{
+					...state,
+					videogames: allVideogames
+				}
+			}
+			if(action.payload === 'api'){
+				return{
+					...state,
+					videogames: allVideogames.filter(el => (typeof el.id) === 'number')
+				}
+			}
+			if(action.payload === 'created'){
+				return{
+					...state,
+					videogames: allVideogames.filter(el => (typeof el.id) === 'string')
+				}
+			} else{
+				const filtered = allVideogames.filter(game => game.genres.find(genre => genre.name === action.payload))
 
-
-		
-
+				return {
+					...state,
+					videogames: filtered
+				}
+			}
 		default: {
-			return state
+		return state
 		}
 	}
 	

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogames, getGenres } from "../../actions";
+import { getVideogames, getGenres, filterByGenre } from "../../actions";
 import { Link } from 'react-router-dom';
 import Paged from '../Paged/Paged';
 import Videogame from '../Videogame/Videogame'
 
 export default function Home(){
-  const dispatch = useDispatch();
-	const allVideogames = useSelector((state) => state.allVideogames);
+	const dispatch = useDispatch();
+	const allVideogames = useSelector((state) => state.videogames);
+	//const filtered = useSelector((state) => state.filtered)
 	const genres = useSelector((state) => state.genres);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [videogamesPerPage, setVideogamesPerPage] = useState(15);
@@ -20,11 +21,16 @@ export default function Home(){
 
 	useEffect(() => {
 		dispatch(getVideogames())
-	},[])
+	},[dispatch])
 
 	useEffect(() => {
 		dispatch(getGenres())
-	},[])
+	},[dispatch])
+
+	function handleFilterGenre(e){
+		dispatch(filterByGenre(e.target.value))
+	}
+
 
 	return(
 		<div>
@@ -63,15 +69,15 @@ export default function Home(){
 						<option value='desc'>Rating Mayor a Menor</option>
 						<option value='asc'>Rating Menor a Mayor</option>
 					</select>
-					<select>
+					<select onChange={e => handleFilterGenre(e)}>
 						<option value='all'>Todos</option>
-						{genres.map(el => 
-							<option value={el.name}>{el.name}</option>
-						)}
+						{genres?.map((el) =>(
+							<option key={el.id} value={el.name}>{el.name}</option>
+						))}
 					</select>
-					<select>
+					<select onChange={e => handleFilterGenre(e)}>
 						<option value='all'>Todos</option>
-						<option value='creado'>Creado</option>
+						<option value='created'>Creado</option>
 						<option value='api'>Existente</option>
 					</select>	
 				</div>
@@ -80,7 +86,7 @@ export default function Home(){
 
 				<div>
 					{currentVideogames?.map(el => 
-						<Videogame img={el.img} name={el.name} genres={el.genres}/>
+						<Videogame img={el.img} name={el.name} genres={el.genres} key={el.id}/>
 					)}
 				</div>
 				<Paged
