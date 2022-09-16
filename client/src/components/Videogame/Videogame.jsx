@@ -1,10 +1,13 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
-export default function Videogame({img, name, genres}){
+export default function Videogame({img, name, genres, id}){
 	return(
 		<div>
-			<img src={img} alt='videogame' width='150px' height='150px'/>
+			<Link to={`videogames/${id}`}>
+			<img src={img} alt='videogame' width='200px' height='200px'/>
 			<h3>{name}</h3>
+			</Link>
 			<h5>Genres</h5>
 			{genres.map(el => 
 				<ul key={el.id} type="none">

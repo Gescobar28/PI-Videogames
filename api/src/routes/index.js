@@ -34,8 +34,8 @@ const dataApi = async () => {
 				name: el.name,
 				img: el.background_image,	
 				//released: el.released,
-				// rating: el.rating,
-				// platforms: el.platforms.map(el => el.platform.name),
+				rating: el.rating,
+				platforms: el.parent_platforms.map(el => el.platform.name),
 				genres: el.genres
 			};
 			return games;
@@ -121,11 +121,11 @@ router.get('/videogames/:id', async (req, res) => {
 				id:apiData.id,
 				name: apiData.name,
 				img: apiData.background_image,
-				description: apiData.description,
+				description: apiData.description_raw,
 				released: apiData.released,
 				rating: apiData.rating,
-				platforms: apiData.platforms.map(el => el.platform.name),
-				genres: apiData.genres.map(el => el.name)
+				platforms: apiData.parent_platforms.map(el => el.platform.name),
+				genres: apiData.genres.map(el => el)
 			}
 
 			res.json(game)
@@ -141,7 +141,7 @@ router.get('/genres', async (req, res) => {
 	res.json(infoApi)
 })
 
-router.post('/videogames', async (req, res) => {
+router.post('/create', async (req, res) => {
 	const { name, description, released, rating, platforms, genres, img } = req.body;
 	const videogames = await getAll();
 	const checkVideogame = videogames.filter(el => el.name.toLowerCase() === name.toLowerCase());
