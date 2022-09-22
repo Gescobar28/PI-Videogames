@@ -1,0 +1,18 @@
+.tittle{
+	font-size: 60px;
+}
+
+.start{
+	color: black;
+	font-size: 35px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 15%;
+}
+
+.start:hover{
+	color: white;
+	background-color: black;
+
+}

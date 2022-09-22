@@ -1,0 +1,113 @@
+.divVideogame{
+	display: flex;
+	flex-wrap: wrap;    
+	justify-content: center;
+	width: -20%;
+	box-shadow: inset;
+}
+
+.divHeader{
+	display: flex;
+	flex-wrap: wrap; 
+}
+
+.divTittle{
+	display: flex;
+	position: absolute;
+	margin-top: -30px;
+	left: 15px;
+	color: yellow;
+	width: 50%;
+	cursor: pointer;
+	font-size: 28px;
+}
+
+.divAdd{
+	position: absolute;
+	right: 15px;
+	top: 25px;
+	font-size: 18px;
+	background-color: transparent;
+	border-color: azure;
+	color: azure;
+	border-radius: 5px;
+	width: 230px;
+	text-align: center;
+}
+
+.divAdd:hover{
+	font-weight: bold;
+	color: black;
+	border-color: black;
+	background-color: yellow;
+}
+
+.divRefresh{
+	display: flex;
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	border-radius: 5px;
+	font-size: 	12px;
+	background-color: transparent;
+	color: azure;
+	border-color: transparent;
+}
+
+.divRefresh:hover{
+	color: yellow;
+	font-weight: bold;
+}
+
+.link{
+	text-decoration: none;
+	color:azure;
+}
+
+.divOption{
+	width: 20%;
+	float: left;
+	margin-left: 30px;
+	background-color:  rgba(97, 96, 96, 0.349);
+	height: 480px;
+	border-radius: 15px;
+	box-shadow: 2px 2px 2px  rgba(204, 226, 3, 0.74);
+}
+
+.divGames{
+	width: 80%;
+	float: right;
+	left: 10px;
+}
+
+.selects{
+	background-color: transparent;
+	color: white;
+	border-width: 3px;
+	border-style:dotted;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+	width: 90%;
+	height: 20px;
+	margin-top: 5px;
+}
+
+.selects:hover{
+	background-color:transparent;
+	color: black;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.h5Option{
+	text-align: left;
+	font-size: 16px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	width: 80%;
+	margin-left: 10px;
+}
+
+.h3Select{
+	color: yellow;
+	font-size: 20px;
+}

@@ -1,0 +1,66 @@
+.divGame{
+    display: flex;
+    justify-content: space-around;
+    width: 230px;
+    height: 330px;
+    background-color: rgba(97, 96, 96, 0.349);
+    border-radius: 15px;
+    margin: 25px;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px  rgba(204, 226, 3, 0.74);
+}
+
+.img{
+    width: 230px;
+    height: 150px;    
+}
+
+.link{
+    text-decoration: none;
+}
+
+.h3{
+    font-size: 19px;
+    margin-top: 15px;
+    color: yellow;
+    height: 40px;
+    text-align: center;
+}
+
+.h5Game{
+    margin-top: 5px;
+    font-size: 15px;
+    margin-bottom: 3px;
+    margin-left: 25px;
+    text-align: left;
+    width: 80%;
+}
+
+.genres{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 13px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.divGenres{
+    width: 50%;
+    float: left;
+}
+.divRating{
+    width: 50%;
+    float: right;
+    text-align: center;
+}
+
+.numRating{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.star{
+    width: 30px;
+    height: 30px;
+}

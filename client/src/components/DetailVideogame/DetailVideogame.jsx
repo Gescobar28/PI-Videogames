@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../../actions";
 import { Link } from "react-router-dom";
+import './DetailVideogame.css'
 
 
 export default function DetailVideogame(props){
@@ -13,27 +14,37 @@ export default function DetailVideogame(props){
 	},[dispatch]);
 
 	return(
-		<div>
-			<img src={videogame.img} alt='image not found' width='200px' height='200px'/>
-			<h1>{videogame.name}</h1>
-			<h5>Genres</h5>
+		<>
+		<div className="divDetail">			
+			<h1 className="h1Detail">{videogame.name}</h1>
+			<div className="divInfo">
+				<div>
+				<img className="imgProps" src={videogame.img} alt='not found'/>
+				</div>
+				<p className="description">{videogame.description}</p>
+				<div className="divContain">
+				<h5 className="h5Add">Genres:</h5>
 				{videogame.genres?.map(el => 
-					<ul key={el.id} type="none">
-						<li key={el.id}>{el.name}</li>
-					</ul>
-				)}			
-			<h5>Released</h5>
-			<p>{videogame.released}</p>
-			<h5>Rating</h5>
-			<p>{videogame.rating}</p>
-			<h5>Platforms</h5>
-			{videogame.platforms?.map(el => 
-				<ul type='none'>
-					<li key={el}>{el}</li>
-				</ul>)}
-			<h5>Description</h5>
-			<p>{videogame.description}</p>
-			<Link to='/videogames'>Back</Link>
+					<p className="options" key={el.id}>{el.name}</p>
+				)}	
+				</div>
+				<div className="divContain">
+				<h5 className="h5Add">Released date:</h5>
+				<p className="options">{videogame.released}</p>
+				</div>
+				<div className="divContain">
+				<h5 className="h5Add">Platforms:</h5>
+				{videogame.platforms?.map(el => 
+					<p className="options" key={el}>{el}</p>
+				)}
+				</div>
+				<div className="divContain">
+				<h5 className="h5Add">Rating:</h5>
+				<p className="options">{videogame.rating}</p>
+				</div>
+			</div>			
 		</div>
+		<Link className="linkDetail" to='/videogames'>Back</Link>
+		</>
 	)
 }

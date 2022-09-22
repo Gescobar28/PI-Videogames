@@ -22,7 +22,7 @@ const dataApi = async () => {
 	var next = apiUrl.data.next;
 	var apiVideogames= apiUrl.data.results;
 
-		for (let i = 1; i < 2; i++) {
+		for (let i = 1; i < 1; i++) {
 		let element = await axios.get(next);
 		element.data.results.map(el => apiVideogames.push(el))
 		next = element.data.next;
@@ -148,17 +148,17 @@ router.post('/create', async (req, res) => {
 	
 	if(!checkVideogame.length){
 		try {
-			const createVideogame = await Videogame.findOrCreate({
+			const [ createVideogame, created ] = await Videogame.findOrCreate({
 				where: {
 					name,
 					description,
 					released,
 					rating,
-					platforms, 
+					platforms,
 					img
 				}
 			})
-			await createVideogame[0].addGenres(genres);
+			await createVideogame.addGenres(genres);
 			res.json(createVideogame)
 		} catch (error) {
 			console.log(error)

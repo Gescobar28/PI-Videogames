@@ -1,0 +1,123 @@
+.divDetail{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    height: 50%;
+    background-color:rgba(240, 255, 255, 0.062);
+    border-radius: 10px;
+    margin: 5% 25% 5% 25%;
+    border: 1px solid yellow; 
+}
+
+.h1Detail{
+    top: 15px;
+    text-shadow: 3px 3px 3px rgba(204, 226, 3, 0.74);
+}
+
+.imgProps{
+    width: 100%;
+    height: 250px;    
+}
+
+.description{
+    font-size: 14px;
+    text-align: justify;
+    margin-right: 2%;
+    width: 100%;
+    height: 100px;
+    word-wrap: break-word;
+    overflow: auto;
+    scroll-margin: 50px;
+}
+
+.description::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.description::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+.description::-webkit-scrollbar-button:increment,.description::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.description::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.description::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+.description::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.divInfo{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.h5Add{
+    font-size: 12px;
+    
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content:baseline;
+    margin-top: 0%;
+    text-decoration: double underline;
+}
+
+.options{
+    font-size: 12px;
+    margin: 7px 7px;
+    width: auto;
+    height: 12px;
+    margin-top: 0%;
+}
+
+.divContain{
+    height: auto;
+    display: flex ; 
+    justify-content:baseline;
+    width: auto;
+}
+
+/* 
+
+
+
+
+
+.divPlatforms{
+    display: inline;
+    margin-left: 55px;
+    float: left;
+    
+}
+
+.divGenres{
+    display: inline;
+    float: left;
+}
+
+
+ */
+
+.linkDetail{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.linkDetail:hover{
+    color: yellow;
+}

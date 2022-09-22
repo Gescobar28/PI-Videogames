@@ -1,0 +1,13 @@
+.paged{
+    margin: 7px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    left: 50%;
+    height: 50px;
+}
+
+.paged:hover{
+    color: yellow;
+}

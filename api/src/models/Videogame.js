@@ -16,7 +16,8 @@ module.exports = (sequelize) => {
       unique: true
     },
     img: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
+      defaultValue: 'https://sm.ign.com/t/ign_es/tag/v/videojuego/videojuegos_4ze8.300.jpg'
     },
     description: {
       type: DataTypes.TEXT,
@@ -26,7 +27,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
     },
     platforms: {
       type: DataTypes.ARRAY(DataTypes.STRING),

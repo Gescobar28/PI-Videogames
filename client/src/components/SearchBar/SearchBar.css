@@ -1,0 +1,27 @@
+.inputSearch{
+    width: 500px;
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgba(97, 96, 96, 0.349);
+    color: white;
+    /* box-shadow: 1px 1px 1px 2px rgba(255, 255, 0, 0.548); */
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttonSearch{
+    width: 100px;
+    height: 37px;
+    background-color: rgba(97, 96, 96, 0.829);
+    color: azure;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 0, 0.548);
+    border-color: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonSearch :hover{
+    
+}

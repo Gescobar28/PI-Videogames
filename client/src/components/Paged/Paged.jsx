@@ -1,4 +1,4 @@
-
+import './Paged.css'
 
 export default function Paged({ videogamesPerPage, allVideogames, paginado }){
   const pageNumbers = [];
@@ -12,7 +12,7 @@ export default function Paged({ videogamesPerPage, allVideogames, paginado }){
       <div>
         <ul>
           {pageNumbers?.map(el =>
-            <a key={el} onClick={() => paginado(el)}>{el}</a>
+            <a className='paged' key={el} onClick={() => paginado(el)}>{el}</a>
           )}
         </ul>
       </div>

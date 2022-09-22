@@ -1,0 +1,198 @@
+.divAddAll{
+    border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 5% 30% 2% 30%;
+    height: 60%;
+    background-color:rgba(240, 255, 255, 0.062);
+    border-radius: 2%;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    align-items: baseline;
+}
+
+.label{
+    width: 20%;
+    margin-left: 2%;
+}
+
+.divAddVideogame{
+    
+}
+
+.divNameAdd{
+    display: flex;
+    flex-wrap: nowrap;
+    
+    width: 100%;
+    text-align: left;
+}
+
+.divImgAdd{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.divReleasedAdd{
+    display: flex;
+    flex-wrap: nowrap;
+    
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px 10px 0px;
+}
+
+.divRatingAdd{
+    display: flex;
+    flex-wrap: nowrap;
+    
+    width: 100%;
+    text-align: left;
+}
+
+.divPlatformsAdd{
+    display: flex;
+    flex-wrap: nowrap;
+    
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}
+
+.divGenresAdd{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+}
+
+.divDescriptionAdd{
+    
+    text-align: left;
+    margin: 10px 0px 10px 0px;
+}
+
+.buttonAdd{
+    background-color:rgba(240, 255, 255, 0.062);
+    height: 30%;
+    width: 40%;
+    color: azure;
+    border-radius: 5%;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonAdd:hover{
+    background-color: rgba(8, 230, 0, 0.705);
+}
+
+.buttonBack{
+    display: block;
+    background-color:rgba(240, 255, 255, 0.062);
+    height: 100%;
+    width: 100%;
+    color: azure;
+    border-radius: 5%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonBack:hover{
+    background-color: rgba(230, 0, 0, 0.685);
+}
+
+.buttonReset{
+    background-color:rgba(240, 255, 255, 0.062);
+    height: 30%;
+    width: 20%;
+    color: azure;
+    border-radius: 5%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 1%;
+    padding-top: 0.5%;
+    
+}
+
+.buttonReset:hover{
+    background-color: rgba(215, 230, 0, 0.685);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 5% 0% 5% 0;
+    height: 30%;
+}
+
+.textarea{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5px;
+}
+
+.errors{
+    font-size: 15px;
+    color: red;
+    border-color: 1px solid white;
+}
+
+.danger{
+    border: 1px solid red;
+}
+
+.linkAdd{
+    text-decoration: none;
+}
+
+.genresAdd{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 0.5%;
+    font-size: 10px; 
+    height: 50%;
+    box-sizing: border-box;
+}
+
+.liGenres{
+    width: auto;
+    margin: auto;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteGenres{
+    width: auto;
+    height:auto;
+    font-size: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0.438);
+    border-radius: 20%;
+    color: azure;
+    border-color: transparent;
+    display: flex ;
+    box-sizing: border-box;
+
+}
