@@ -8,6 +8,7 @@ import './DetailVideogame.css'
 export default function DetailVideogame(props){
 	const dispatch = useDispatch();
 	const videogame = useSelector((state) => state.detail)
+	console.log(videogame)
 
 	useEffect(()=> {
 		dispatch(getDetail(props.match.params.id))
@@ -15,36 +16,41 @@ export default function DetailVideogame(props){
 
 	return(
 		<>
-		<div className="divDetail">			
-			<h1 className="h1Detail">{videogame.name}</h1>
-			<div className="divInfo">
+			{ videogame ?
 				<div>
-				<img className="imgProps" src={videogame.img} alt='not found'/>
+					<div className="divDetail">			
+						<h1 className="h1Detail">{videogame.name}</h1>
+						<div className="divInfo">
+							<div>
+							<img className="imgProps" src={videogame.img} alt='not found'/>
+							</div>
+							<p className="description">{videogame.description}</p>
+							<div className="divContain">
+							<h5 className="h5Add">Genres:</h5>
+							{videogame.genres?.map(el => 
+								<p className="options" key={el.id}>{el.name}</p>
+							)}	
+							</div>
+							<div className="divContain">
+							<h5 className="h5Add">Released date:</h5>
+							<p className="options">{videogame.released}</p>
+							</div>
+							<div className="divContain">
+							<h5 className="h5Add">Platforms:</h5>
+							{videogame.platforms?.map(el => 
+								<p className="options" key={el}>{el}</p>
+							)}
+							</div>
+							<div className="divContain">
+							<h5 className="h5Add">Rating:</h5>
+							<p className="options">{videogame.rating}</p>
+							</div>
+						</div>			
+					</div>
+					<Link className="linkDetail" to='/videogames'>Back</Link>
 				</div>
-				<p className="description">{videogame.description}</p>
-				<div className="divContain">
-				<h5 className="h5Add">Genres:</h5>
-				{videogame.genres?.map(el => 
-					<p className="options" key={el.id}>{el.name}</p>
-				)}	
-				</div>
-				<div className="divContain">
-				<h5 className="h5Add">Released date:</h5>
-				<p className="options">{videogame.released}</p>
-				</div>
-				<div className="divContain">
-				<h5 className="h5Add">Platforms:</h5>
-				{videogame.platforms?.map(el => 
-					<p className="options" key={el}>{el}</p>
-				)}
-				</div>
-				<div className="divContain">
-				<h5 className="h5Add">Rating:</h5>
-				<p className="options">{videogame.rating}</p>
-				</div>
-			</div>			
-		</div>
-		<Link className="linkDetail" to='/videogames'>Back</Link>
+				: <p>Loading</p>
+			}
 		</>
 	)
 }

@@ -58,26 +58,28 @@ export default function Home(){
 
 
 	return(
-		<div>
+		<div className="divHome">
 			
 			{/* Esto se muestra en la parte superior */}
 
+			<header className="header" id="header">
 			<div className="divHeader">
+				
 				<div className="divTittle">
-				<h1 onClick={(e) => handleClick(e)}>Videogames</h1>
+				<h1 onClick={(e) => handleClick(e)}>VIDEOGAMES</h1>
 				</div>
-				<div>
+				<div className="divAdd">
 				<Link  className='link' to='/create'>
-					<button className="divAdd">Add Videogame</button>
+					<button className="divAddButton">Add Videogame</button>
 				</Link>
 				</div>
 				{/* <div>
 				<button className="divRefresh" onClick={(e) => handleClick(e)}>Refresh</button>
 				</div> */}
 			</div>
+			</header>
 
 			{/* Este div contiene el resto, dentro van dos div uno que muestra los juegos y otro que muestra la barra, filtros y ordenamiento */}
-			<br/><br/><br/><br/>
 			<SearchBar/>
 			<div>
 			<Paged
@@ -96,41 +98,42 @@ export default function Home(){
 					<h3 className="h3Select">Sort by:</h3>
 					<h5 className="h5Option">Alphabet:</h5>
 					<select className="selects" onChange={e => handleOrderName(e)}>
-						<option>-</option>
-						<option value='az'>A-Z</option>
-						<option value='za'>Z-A</option>
+						<option className="optionAll">-</option>
+						<option className="optionAll" value='az'>A-Z</option>
+						<option className="optionAll" value='za'>Z-A</option>
 					</select>
 					<br/>
 					<br/>
 					<h5 className="h5Option">Rating:</h5>
 					<select className="selects" onChange={e => handleOrderRating(e)}>
-						<option>-</option>
-						<option value='desc'>Low to High</option>
-						<option value='asc'>High to Low</option>
+						<option className="optionAll">-</option>
+						<option className="optionAll" value='desc'>Low to High</option>
+						<option className="optionAll" value='asc'>High to Low</option>
 					</select>
 					<h3 className="h3Select">Filter by:</h3>
 					<h5 className="h5Option">Genres</h5>
 					<select className="selects" onChange={e => handleFilterGenre(e)}>
-						<option value='all'>All</option>
+						<option className="optionAll" value='all'>All</option>
 						{genres?.map((el) =>(
-							<option key={el.id} value={el.name}>{el.name}</option>
+							<option className="optionAll" key={el.id} value={el.name}>{el.name}</option>
 						))}
 					</select>
 					<br/><br/>
 					<h5 className="h5Option">Storage:</h5>
 					<select className="selects" onChange={e => handleFilterGenre(e)}>
-						<option value='all'>All</option>
-						<option value='created'>Created</option>
-						<option value='api'>Loaded from API</option>
+						<option className="optionAll" value='all'>All</option>
+						<option className="optionAll" value='created'>Created</option>
+						<option className="optionAll"value='api'>Loaded from API</option>
 					</select>	
 				</div>
 
 				{/* Esto se muestra del lado derecho */}
 
 				<div className="divVideogame">
-					{currentVideogames?.map(el => 
+					{currentVideogames.length > 0 ? currentVideogames.map(el => 
 						<Videogame img={el.img} id={el.id} name={el.name} genres={el.genres} key={el.id} rating={el.rating}/>
-					)}
+					)	: <p>Loading...</p>
+					}
 				</div>
 				<Paged
 			videogamesPerPage = {videogamesPerPage}

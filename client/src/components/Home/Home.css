@@ -1,42 +1,72 @@
+.divHome{
+	background-image: url(../../image/fondohome.png);
+	overflow: hidden;
+	min-height: 100vh;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
 .divVideogame{
 	display: flex;
 	flex-wrap: wrap;    
-	justify-content: center;
-	width: -20%;
+	justify-content: space-evenly;
 	box-shadow: inset;
+	box-sizing: border-box;
 }
 
+.header{
+	/* border: 1px solid rgb(255, 0, 0); */
+}
+
+
 .divHeader{
+	margin-top: 0.3%;
 	display: flex;
+	border: 1px solid rgba(0, 0, 255, 0.267);
 	flex-wrap: wrap; 
+	width: 100%;
+	height: 2%;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	box-shadow: 2px 2px 10px 2px rgba(226, 3, 96, 0.671);
 }
 
 .divTittle{
-	display: flex;
-	position: absolute;
-	margin-top: -30px;
-	left: 15px;
-	color: yellow;
+	color: rgb(255, 255, 255);
 	width: 50%;
 	cursor: pointer;
-	font-size: 28px;
+	font-size: 150%;
+	/* border: 1px solid salmon; */
+	box-sizing: border-box;
+	text-align: left;
+	text-shadow:  3px 2px 2px rgba(0, 247, 255, 0.486);
+	padding-left: 5%;
+	letter-spacing: 8px;
 }
 
 .divAdd{
-	position: absolute;
-	right: 15px;
-	top: 25px;
-	font-size: 18px;
-	background-color: transparent;
-	border-color: azure;
-	color: azure;
-	border-radius: 5px;
-	width: 230px;
-	text-align: center;
+	width: 50%;
 }
 
-.divAdd:hover{
+.divAddButton{
+	background-color: transparent;
+	color: azure;
+	border-radius: 5px;
+	width: auto;
+	border: 1px solid rgb(255, 255, 255);
+	box-sizing: border-box;
+	font-size: 120%;
+	display: flex;
+	float: right;
+	justify-content: center;
+	margin-right: 10%;
+}
+
+.divAddButton:hover{
 	font-weight: bold;
+	width: auto;
 	color: black;
 	border-color: black;
 	background-color: yellow;
@@ -65,49 +95,58 @@
 }
 
 .divOption{
-	width: 20%;
+	width: 15%;
 	float: left;
-	margin-left: 30px;
-	background-color:  rgba(97, 96, 96, 0.349);
-	height: 480px;
+	margin-left: 2%;
+	padding-bottom: 2%;
+	border: 1px solid blue;
+	background-color:  rgba(0, 0, 0, 0.548);
+	height: auto;
 	border-radius: 15px;
-	box-shadow: 2px 2px 2px  rgba(204, 226, 3, 0.74);
+	box-shadow: 2px 2px 2px  rgba(226, 3, 189, 0.74);
 }
 
 .divGames{
-	width: 80%;
+	width: 85%;
 	float: right;
-	left: 10px;
+	left: 2%;
 }
 
 .selects{
 	background-color: transparent;
 	color: white;
-	border-width: 3px;
-	border-style:dotted;
 	font-family: 'Courier New', Courier, monospace;
-	font-size: 15px;
+	font-size: 100%;
 	width: 90%;
-	height: 20px;
-	margin-top: 5px;
+	height: auto;
+	border-radius: 10%;
+	text-shadow:  2px 0px 10px rgb(255, 0, 106);
 }
-
+/* 
 .selects:hover{
 	background-color:transparent;
 	color: black;
 	font-family: 'Courier New', Courier, monospace;
-}
+} */
 
 .h5Option{
 	text-align: left;
-	font-size: 16px;
-	margin-top: 2px;
-	margin-bottom: 2px;
+	font-size: 100%;
+	margin-top: 3%;
+	margin-bottom: 3%;
 	width: 80%;
-	margin-left: 10px;
+	margin-left: 5%;
 }
 
 .h3Select{
-	color: yellow;
+	text-shadow:  2px 0px 10px rgb(162, 0, 255);
+	color: rgb(255, 255, 255);
 	font-size: 20px;
+	
+}
+
+.optionAll{	
+	background-color:rgba(0, 0, 0, 0.877);
+	color: white;
+	text-shadow:  2px 0px 10px rgb(255, 0, 179);
 }

@@ -41,7 +41,7 @@ const rootReducer = (state = initialState, action) => {
 					videogames: allVideogames.filter(el => (typeof el.id) === 'string')
 				}
 			} else{
-				const filtered = allVideogames.filter(game => game.genres.find(genre => genre.name === action.payload))
+				const filtered = allVideogames.filter((game) => game.genres.find(genre => genre.name === action.payload))
 
 				return {
 					...state,

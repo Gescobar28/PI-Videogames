@@ -8,26 +8,19 @@ function validate(input, checkVideogame){
 	let errors = {};
 	if(!input.name){
 		errors.name = 'Name is required'
-	} 
-	if(input.name.length < 2){
+	} else if(input.name.length < 2){
 		errors.name = 'Name is required'
-	} 
-	if(!input.released){
+	} else if(!input.released){
 		errors.released = 'Enter a date'
-	} 
-	if(!input.rating || input.rating < 1 || input.rating > 5){
+	} else if(!input.rating || input.rating < 1 || input.rating > 5){
 		errors.rating = 'Enter a number between 1 and 5'
-	} 
-	if(input.platforms < 1){
-		errors.platforms = 'Select at least 1 platform'
-	} 
-	if(input.genres < 1){
+	}  else if(input.genres < 1){
 		errors.genres = 'Select at least 1 genre'
-	} 
-	if(!input.img){
+	} else if(!input.img){
 		errors.img = 'Enter a image URL'
-	} 
-	if(!input.description || input.description.length < 8){
+	} else if(input.platforms < 1){
+		errors.platforms = 'Select at least 1 platform'
+	} else if(!input.description || input.description.length < 8){
 		errors.description = 'Description is required'
 	}
 	return errors
@@ -167,55 +160,65 @@ export default function CreateVideogame(){
 	}
 
 	return(
-		<div>
+		<div className="divTot">
 			<form className="divAddAll" onSubmit={(e) => handleSubmit(e)}>
 				<h1 className="divAddVideogame">Add Videogame</h1>
-				<div>	
-					<div className="divNameAdd">
-						<label className="label">Name:</label>
-						<input className={errors.name && 'danger'} type='text' value={input.name} name='name' onChange={(e) => handleChangeName(e)}></input>
-					</div>
-						{errors.name && (<p className="errors">{errors.name}</p>)}
-					<div className="divReleasedAdd">
-						<label className="label">Released:</label>
-						<input className={errors.released && 'danger'}type='date' name='released' onChange={(e) => handleChange(e)}></input>
-					</div>
-						{errors.released && (<p className="errors">{errors.released}</p>)}
-					<div className="divRatingAdd">
-						<label className="label">Rating:</label>
-						<input className={errors.rating && 'danger'} type='number' min='1' max='5' step='0.1' name='rating' onChange={(e) => handleChange(e)}></input>
-					</div>
-						{errors.rating && (<p className="errors">{errors.rating}</p>)}
-						{errors.platforms && (<p className="errors">{errors.platforms}</p>)}
-					<div className="divPlatformsAdd">	
-						<label className="label">Platforms:</label>
-						<div className="box">
-							{platformsList.map(el =><p className="checkbox" key={el}><input className={errors.platforms && 'danger'}type='checkbox' value={el} name={el} key={el} onChange={(e) => handleCheck(e)}></input>{el}</p>)}							
+				<div className="divCont">	
+					<div className="divNew">
+						<div className="divNameAdd">
+							<label className="label">Name:</label>
+							<input placeholder="Enter a name" className='danger' type='text' value={input.name} name='name' onChange={(e) => handleChangeName(e)}></input>
 						</div>
-					</div>
-					{errors.genres && (<p className="errors">{errors.genres}</p>)}
-					<div className="divGenresAdd">
-						<label className="label">Genres:</label>
-						<select onChange={(e) => handleSelect(e)}>
-							{genres.map(el =><option className={errors.genres && 'danger'} key={el.name} value={el.name}>{el.name}</option>)}
-						</select>
-							{input.genres?.map(el => 
-								<div className="genresAdd" type='none'  key={el}>
-									<p className="liGenres" key={el}>{el}</p>
-									<button className="deleteGenres" onClick={() => handleDelete(el)}>x</button>
-								</div>
-							)}
-							
-					</div>
+							{errors.name && (<p className="errors">{errors.name}</p>)}
+						<div className="divReleasedAdd">
+							<label className="label">Released:</label>
+							<input className='danger'type='date' name='released' onChange={(e) => handleChange(e)}></input>
+						</div>
+							{errors.released && (<p className="errors">{errors.released}</p>)}
+						<div className="divRatingAdd">
+							<label className="label">Rating:</label>
+							<input placeholder="Enter a number" className='danger' type='number' min='1' max='5' step='0.1' name='rating' onChange={(e) => handleChange(e)}></input>
+						</div>
+						{errors.rating && (<p className="errors">{errors.rating}</p>)}
 						
-					<div className="divImgAdd">
-						<label className="label">Image:</label>
-						<input type='text' placeholder="Enter image URL " value={input.img} name='img' onChange={(e) => handleChange(e)}></input>
+						<div className="divGenresAdd">
+							<label className="label">Genres:</label>
+							<select className="selectGenre" onChange={(e) => handleSelect(e)}>
+								{genres.map(el =><option className='labelGenre' key={el.name} value={el.name}>{el.name}</option>)}
+							</select>
+							{errors.genres && (<p className="errors">{errors.genres}</p>)}
+								{input.genres?.map(el => 
+									<div className="genresAdd" type='none'  key={el}>
+										<p className="liGenres" key={el}>{el}</p>
+										<button className="deleteGenres" onClick={() => handleDelete(el)}>X</button>
+									</div>
+								)}
+								
+						</div>
+							
+						<div className="divImgAdd">
+							<label className="label">Image:</label>
+							<input className='danger' type='url' placeholder="Enter image URL " value={input.img} name='img' onChange={(e) => handleChange(e)}></input>
+						</div>
+						{errors.img && (<p className="errors">{errors.img}</p>)}
 					</div>
-					{errors.img && (<p className="errors">{errors.img}</p>)}
-					{errors.description && (<p className="errors">{errors.description}</p>)}
+					
+					
+				
+					<div className="divNew">
+					{errors.platforms && (<p className="errors">{errors.platforms}</p>)}
+						<div className="divPlatformsAdd">	
+							<label className="label">Platforms:</label>
+							<div className="box">
+								{platformsList.map(el =><p className="checkbox" key={el}><input className="inputPlat" type='checkbox' value={el} name={el} key={el} onChange={(e) => handleCheck(e)}></input>{el}</p>)}							
+							</div>
+						</div>
+						</div>
+						
+					
 					<div className="divDescriptionAdd">
 						<label className="label">Description:</label>
+						{errors.description && (<p className="errors">{errors.description}</p>)}
 						<textarea className='textarea' rows='5' value=	{input.description} name='description' onChange={(e) => handleChange(e)}></textarea>
 					</div>
 				</div>
