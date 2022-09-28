@@ -1,34 +1,48 @@
+.divAllDetail{
+	background-image: url(../../image/fondodetail.jpg);
+	overflow: hidden;
+	min-height: 100vh;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
 .divDetail{
     display:flex;
     justify-content: center;
     flex-direction: column;
-    width: auto;
-    height: 50%;
-    background-color:rgba(240, 255, 255, 0.062);
+    width: 80%;
+    height: 80%;
+    margin: 1% 10% 5% 10%;
+    background-color:rgba(7, 7, 7, 0.966);
     border-radius: 10px;
-    margin: 5% 25% 5% 25%;
-    border: 1px solid yellow; 
+    border: 1px solid rgba(17, 0, 255, 0.589); 
+    box-shadow: 2px 3px 3px 1px rgba(226, 3, 189, 0.74);
 }
 
 .h1Detail{
     top: 15px;
-    text-shadow: 3px 3px 3px rgba(204, 226, 3, 0.74);
+    text-shadow: 5px 3px 10px rgba(226, 3, 152, 0.74);
 }
 
 .imgProps{
     width: 100%;
-    height: 250px;    
+    height: 250px; 
+    /* border: 1px solid salmon;  */
+    display: flex;
 }
 
 .description{
     font-size: 14px;
     text-align: justify;
     margin-right: 2%;
-    width: 100%;
-    height: 100px;
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
     word-wrap: break-word;
     overflow: auto;
     scroll-margin: 50px;
+    /* border: 1px solid rgb(130, 250, 114);  */
 }
 
 .description::-webkit-scrollbar {
@@ -58,13 +72,22 @@
 }
 
 .divInfo{
+    display: flex;
     margin-left: 10%;
     margin-right: 10%;
+    /* border: 1px solid rgb(255, 238, 0);  */
+}
+
+.newDiv{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid rebeccapurple; */
+    width: 50%;
 }
 
 .h5Add{
     font-size: 12px;
-    
+    /* border: 1px solid rgb(255, 25, 0);  */
     width: auto;
     height: auto;
     display: flex;
@@ -74,6 +97,10 @@
 }
 
 .options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgb(0, 15, 231);  */
     font-size: 12px;
     margin: 7px 7px;
     width: auto;
@@ -81,43 +108,36 @@
     margin-top: 0%;
 }
 
+.divButtonBack{
+    /* border: 1px solid green; */
+    display: flex;
+    font-size: 25px;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: end;
+    margin: 2% 10% 0% 10%;
+    
+}
+
 .divContain{
     height: auto;
     display: flex ; 
     justify-content:baseline;
-    width: auto;
+    width: 90%;
+    margin-left: 5%;
+    /* border: 1px solid greenyellow; */
 }
-
-/* 
-
-
-
-
-
-.divPlatforms{
-    display: inline;
-    margin-left: 55px;
-    float: left;
-    
-}
-
-.divGenres{
-    display: inline;
-    float: left;
-}
-
-
- */
 
 .linkDetail{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 100%;
     color: white;
     font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    text-shadow: 5px 3px 10px rgba(185, 226, 3, 0.74);
 }
 
 .linkDetail:hover{
-    color: yellow;
+    color: rgb(235, 230, 234);
+    text-shadow: 5px 3px 10px rgba(0, 0, 0, 0.74);
+    font-size: 30px;
 }

@@ -16,8 +16,6 @@ function validate(input, checkVideogame){
 		errors.rating = 'Enter a number between 1 and 5'
 	}  else if(input.genres < 1){
 		errors.genres = 'Select at least 1 genre'
-	} else if(!input.img){
-		errors.img = 'Enter a image URL'
 	} else if(input.platforms < 1){
 		errors.platforms = 'Select at least 1 platform'
 	} else if(!input.description || input.description.length < 8){
@@ -112,7 +110,7 @@ export default function CreateVideogame(){
 	function handleSubmit(e){
 		const checkVideogame = videogames.filter(el => el.name.toLowerCase() === input.name.toLowerCase())
 
-		if(!input.name || !input.description || !input.released || !input.img || !input.rating || input.genres < 1 || input.platforms < 1){
+		if(!input.name || !input.description || !input.released || !input.rating || input.genres < 1 || input.platforms < 1){
 			e.preventDefault()
 			return alert('Please complete the form')
 		}

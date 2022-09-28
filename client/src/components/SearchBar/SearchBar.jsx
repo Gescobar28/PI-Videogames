@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {searchByName} from '../../actions';
 import './SearchBar.css'
 
@@ -10,6 +10,7 @@ export default function SearchBar(){
 	function handleInput(e){
 		e.preventDefault();
 		setName(e.target.value);
+		dispatch(searchByName(e.target.value))
 	}
 
 	function handleSubmit(e){

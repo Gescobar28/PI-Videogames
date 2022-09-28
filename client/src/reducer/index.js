@@ -1,4 +1,4 @@
-import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY, ORDER_NAME, ORDER_RATING, SEARCH_NAME, GET_DETAIL, POST_VIDEOGAME } from '../actions'
+import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY, ORDER_NAME, ORDER_RATING, SEARCH_NAME, GET_DETAIL, POST_VIDEOGAME} from '../actions'
 
 const initialState = {
 	videogames: [],
@@ -42,12 +42,12 @@ const rootReducer = (state = initialState, action) => {
 				}
 			} else{
 				const filtered = allVideogames.filter((game) => game.genres.find(genre => genre.name === action.payload))
-
 				return {
 					...state,
 					videogames: filtered
 				}
 			}
+
 		case ORDER_NAME:
 			const videogames = state.videogames;
 			const sortedArr = action.payload === 'az' ?

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogames, getGenres, filterBy, OrderByName, OrderByRating } from "../../actions";
+import { getVideogames, getGenres, filterBy, OrderByName, OrderByRating, filterByRating } from "../../actions";
 import { Link } from 'react-router-dom';
 import Paged from '../Paged/Paged';
 import Videogame from '../Videogame/Videogame'
@@ -53,7 +53,6 @@ export default function Home(){
 		dispatch(OrderByRating(e.target.value));
 		setCurrentPage(1);
 		setOrderPage(`Ordenado ${e.target.value}`)
-		
 	}
 
 
@@ -73,9 +72,11 @@ export default function Home(){
 					<button className="divAddButton">Add Videogame</button>
 				</Link>
 				</div>
-				{/* <div>
-				<button className="divRefresh" onClick={(e) => handleClick(e)}>Refresh</button>
-				</div> */}
+				<div>
+				<Link to='/'>
+				<button className="divRefresh">Home</button>
+				</Link>
+				</div>
 			</div>
 			</header>
 
@@ -130,9 +131,9 @@ export default function Home(){
 				{/* Esto se muestra del lado derecho */}
 
 				<div className="divVideogame">
-					{currentVideogames.length > 0 ? currentVideogames.map(el => 
+					{currentVideogames?.map(el => 
 						<Videogame img={el.img} id={el.id} name={el.name} genres={el.genres} key={el.id} rating={el.rating}/>
-					)	: <p>Loading...</p>
+					)
 					}
 				</div>
 				<Paged

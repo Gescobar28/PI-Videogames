@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Router } = require('express');
+const { Router, application } = require('express');
 const { API_KEY } = process.env;
 const axios = require('axios');
 const { Videogame, Genre} = require('../db')
@@ -22,7 +22,7 @@ const dataApi = async () => {
 	var next = apiUrl.data.next;
 	var apiVideogames= apiUrl.data.results;
 
-		for (let i = 1; i < 1; i++) {
+		for (let i = 1; i < 6; i++) {
 		let element = await axios.get(next);
 		element.data.results.map(el => apiVideogames.push(el))
 		next = element.data.next;
@@ -168,6 +168,17 @@ router.post('/create', async (req, res) => {
 	}
 })
 
+router.delete('/videogames/:id', async (req, res) => {
+	const gameDB = await dataDb();
+	const id = req.params.id
 
+	try {
+		let deletedGame = gameDB.filter(el => el.id !== id)
+		res.send({message: deletedGame})
+	} catch (error) {
+		console.log(error)	
+	}
+	
+})
 
 module.exports = router;

@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-around;
     width: 20%;
-    height: auto;
     padding-bottom: 3%;
     background-color: rgba(0, 0, 0, 0.918);
     margin: 2% 2% 2% 2%;
@@ -11,6 +10,11 @@
     border: 1px solid rgb(253, 7, 241);
     box-sizing: border-box;
     border-radius: 5%;
+}
+
+.divGame:hover{
+    background-color: rgba(0, 0, 0, 0.486);
+    border: transparent;
 }
 
 .img{
@@ -27,7 +31,7 @@
 
 .h3{
     width: auto;
-    font-size: 120%;
+    font-size: 105%;
     font-weight: bold;
     margin: 5% 5% 0% 5%;
     color: rgb(255, 255, 255);
@@ -63,18 +67,14 @@
 .divGenres{
     margin-top: 3%;
     width: 50%;
-    height: auto;
-    flex-wrap: wrap;
     float: left;
     /* border: 1px solid rgb(114, 250, 243); */
     box-sizing: border-box;
-    align-items: center;
 }
 .divRating{
     margin-top: 3%;
     width: 50%;
     float: right;
-    text-align: center;
     /* border: 1px solid salmon; */
     box-sizing: border-box;
 }
