@@ -40,6 +40,7 @@ const dataApi = async () => {
 			};
 			return games;
 		});	
+		
 	return apiVideogames;
 }
 
@@ -166,19 +167,6 @@ router.post('/create', async (req, res) => {
 	} else {
 		res.json({message: `El videojuego ${name} ya existe`})
 	}
-})
-
-router.delete('/videogames/:id', async (req, res) => {
-	const gameDB = await dataDb();
-	const id = req.params.id
-
-	try {
-		let deletedGame = gameDB.filter(el => el.id !== id)
-		res.send({message: deletedGame})
-	} catch (error) {
-		console.log(error)	
-	}
-	
 })
 
 module.exports = router;
