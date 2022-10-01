@@ -141,3 +141,50 @@
     text-shadow: 5px 3px 10px rgba(0, 0, 0, 0.74);
     font-size: 30px;
 }
+
+/* Pantallas dispositivos pequeños  (Telefonos) */
+@media (max-width: 650px){
+    .imgProps{
+        width: 100%;
+        height: auto; 
+        /* border: 1px solid salmon;  */
+    }
+    .newDiv{
+        display: flex;
+        flex-wrap: wrap;
+        /* border: 1px solid rebeccapurple; */
+        width: 100%;
+        margin-top: 5%;
+    }
+    .divInfo{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 10%;
+        margin-right: 10%;
+        /* border: 1px solid rgb(255, 238, 0);  */
+    }
+    .divContain{
+        display: flex ; 
+        flex-wrap: wrap;
+        justify-content: baseline;
+        width: 100%;
+        margin-left: 0%;
+        /* border: 1px solid greenyellow; */
+    }
+    .h1Detail{
+        top: 15px;
+        text-shadow: 5px 3px 10px rgba(226, 3, 152, 0.74);
+        font-size: 150%;
+    }
+    .options{
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:center;
+        /* border: 1px solid rgb(0, 15, 231);  */
+        font-size: auto;
+        margin: 0% 2% 3% 2%;
+        width: auto;
+        height: 15%;
+    }
+}

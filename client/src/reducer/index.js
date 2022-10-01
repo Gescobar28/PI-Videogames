@@ -1,4 +1,4 @@
-import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY, ORDER_NAME, ORDER_RATING, SEARCH_NAME, GET_DETAIL, POST_VIDEOGAME} from '../actions'
+import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY, ORDER_NAME, ORDER_RATING, SEARCH_NAME, GET_DETAIL, POST_VIDEOGAME, FILTER_BY_RATING} from '../actions'
 
 const initialState = {
 	videogames: [],
@@ -47,6 +47,12 @@ const rootReducer = (state = initialState, action) => {
 					videogames: filtered
 				}
 			}
+		case FILTER_BY_RATING:
+			const filtered = state.allVideogames.filter(el => el.rating > 4.5)
+				return {
+					...state,
+					videogames: filtered
+				}
 
 		case ORDER_NAME:
 			const videogames = state.videogames;

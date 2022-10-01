@@ -2,6 +2,7 @@ import axios from 'axios'
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 export const GET_GENRES = 'GET_GENRES';
 export const FILTER_BY = 'FILTER_BY';
+export const FILTER_BY_RATING = 'FILTER_BY_RATING';
 export const ORDER_NAME = 'ORDER_NAME';
 export const ORDER_RATING = 'ORDER_RATING';
 export const SEARCH_NAME = 'SEARCH_NAME';
@@ -68,6 +69,12 @@ export function filterBy(payload){
   return{   
     type: FILTER_BY,
     payload
+  }
+}
+
+export function filterByRating(){
+  return{   
+    type: FILTER_BY_RATING
   }
 }
 

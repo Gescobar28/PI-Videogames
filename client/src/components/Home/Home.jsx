@@ -11,16 +11,21 @@ import './Home.css'
 export default function Home(){
 	const dispatch = useDispatch();
 	const allVideogames = useSelector((state) => state.videogames);
+	const videogames = useSelector((state) => state.allVideogames)
 	const [orderPage, setOrderPage] = useState()
 	const genres = useSelector((state) => state.genres);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [videogamesPerPage, setVideogamesPerPage] = useState(15);
+	const [videogamesPerPage, setVideogamesPerPage] = useState(12);
 	const numLastVideogame = videogamesPerPage*currentPage;
 	const numFirstVideogame = numLastVideogame - videogamesPerPage;
 	const currentVideogames = allVideogames.slice(numFirstVideogame, numLastVideogame);
 	const paginado = (pageNumber) => {
 		setCurrentPage(pageNumber);
 	}
+
+	console.log(currentVideogames)
+	console.log(videogames)
+	console.log(allVideogames)
 
 	useEffect(() => {
 		dispatch(getVideogames())
@@ -38,6 +43,12 @@ export default function Home(){
 
 	function handleFilterGenre(e){
 		dispatch(filterBy(e.target.value))
+		setCurrentPage(1)
+	}
+
+	function handleFilterRating(){
+		dispatch(filterByRating())
+		setCurrentPage(1)
 	}
 
 	function handleOrderName(e){
@@ -126,15 +137,18 @@ export default function Home(){
 						<option className="optionAll" value='created'>Created</option>
 						<option className="optionAll"value='api'>Loaded from API</option>
 					</select>	
+					{/* <button onClick={() => handleFilterRating()} className="h5Option">Filter Rating</button> */}
 				</div>
 
 				{/* Esto se muestra del lado derecho */}
 
 				<div className="divVideogame">
-					{currentVideogames?.map(el => 
+				{allVideogames.length === 0 && videogames.length === 0 ? <p className="loadingHome">Loading...</p>
+					: currentVideogames.map(el => 
 						<Videogame img={el.img} id={el.id} name={el.name} genres={el.genres} key={el.id} rating={el.rating}/>
 					)
-					}
+				}
+				{currentVideogames.length === 0 && videogames.length !== 0 ? <p className="loadingHome">No results found</p> : ''}
 				</div>
 				<Paged
 			videogamesPerPage = {videogamesPerPage}

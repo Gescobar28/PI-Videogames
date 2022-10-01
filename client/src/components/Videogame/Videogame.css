@@ -89,7 +89,55 @@
     text-shadow:  2px 0px 10px rgb(251, 255, 0);
 }
 
-.star{
-    width: 30px;
-    height: 30px;
+
+/* RESPONSIVE DESING */
+
+/* Pantallas muy grandes (Computadoras) */
+
+@media (max-width: 992px){
+    .divGame{
+        width: 25%;
+    }
+    .h3{
+        height: 25%;
+    }
+}
+
+
+/* Pantallas dispositivos medianos (Tablets) */
+@media (max-width: 768px){
+    .divGame{
+        width: 40%;
+    }
+    .h3{
+        height: 25%;
+    }
+}
+
+/* Pantallas dispositivos pequeños  (Telefonos) */
+@media (max-width: 576px){
+    .divGame{
+        width: 35%;
+        height:auto;
+        margin-bottom: 2%;
+    }
+    .h3{
+        height: auto;
+        margin: 5% 3% 3% 3%;
+        font-size: 80%;
+    }
+    .h5Game{
+        /* display: none; */
+        font-size: 80%;
+    }
+    .numRating{
+        font-size: 80%;
+    }
+    .genres{
+        font-size: 60%;
+    }
+    .img{
+        margin-top: 0%;
+    }
+    
 }
